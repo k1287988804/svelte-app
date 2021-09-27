@@ -1,0 +1,12 @@
+<script lang="ts">
+	type EmptyObject = {
+		// type PropertyKey = string | number | symbol
+		[K in PropertyKey]: never 
+	}
+
+	// 测试用例
+	const shouldPass: EmptyObject = {}; // 可以正常赋值
+	const shouldFail: EmptyObject = { // 将出现编译错误
+		prop: "TS"
+	}
+</script>
